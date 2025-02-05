@@ -1,0 +1,37 @@
+<!-- 
+Question 2 
+
+<html> 
+<head></head> 
+<body> 
+<h1 id="test">Hello World!</h1> 
+</body> 
+</html>
+
+Given the above html, find out what happens when you try to access the element h1 in javascript (using document.getElementById) and change its content to “Goodbye World” when the script is attached: 
+● in the head tag 
+● at the start of the body tag 
+● at the end of the body tag  
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>question2</title>
+</head>
+<body>
+    <h1 id="test"></h1> 
+    <script>
+        msg = document.getElementById("test")
+        msg.innerHTML = "Goodbye World" 
+    </script>
+</body>
+</html>
+
+
+<!-- 
+where we write script tag within head tag and 
+at the start of the body tag, the text doesn't change 
+but, when we write at the end of the body tag, text changes.  
+-->
