@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POST FORM</title>
+  </head>
+  <body>
+    <form action="" id="submitForm">
+      <label for="name">First Name:</label>
+      <input type="text" id="name" name="name" /><br /><br />
+      <label for="job">Job Role:</label>
+      <input type="text" id="job" name="job" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <script>
+      const saveData = async (obj) => {
+        try {
+            console.log(obj);
+            
+          const response = await fetch("https://reqres.in/api/users", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            data: JSON.stringify(obj),
+          });
+          const res_json = await response.json();
+          console.log("Data", res_json);
+          alert("Data Sent Successfully!");
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      let submitForm = document.getElementById("submitForm");
+      submitForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const form_name = document.getElementById("name").value;
+        const form_job = document.getElementById("job").value;
+        const obj = {
+          name: form_name,
+          job: form_job,
+        };
+        saveData(obj);
+      });
+    </script>
+  </body>
+</html>
