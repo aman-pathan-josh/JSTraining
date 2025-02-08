@@ -9,16 +9,11 @@
   <body>
     <div class="container">
         <div class="header">
-            <h1 class="title">Top 20 Users Data</h1>
+            <h2 class="title">Users Data</h2>
+            <input type="search" placeholder="search users..." name="searchBar" onkeyup="searchUser()"  id="search_bar">
             <button class="sort_btn" id="sortBtn">Sort by Name</button>
         </div>
       <table id="table_row" style="width: 60%">
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
-        </tr>
       </table>
     </div>
     <script src="./script.js"></script>
