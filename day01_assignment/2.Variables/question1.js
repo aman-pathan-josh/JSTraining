@@ -13,3 +13,10 @@ console.log(a);
 const b = 12
 console.log("For const:");
 console.log(b);
+
+// Output:
+// For let:
+// undefined
+// 10
+// For const:
+// 12

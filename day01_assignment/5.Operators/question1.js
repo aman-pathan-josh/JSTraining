@@ -12,5 +12,4 @@
 // 6
 // 4
 // ++i -> 3 and then we are adding i++ i.e. 3, so value of c beacomes 6 and i becomes 4
-
     

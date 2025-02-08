@@ -66,34 +66,68 @@ let data = [
 //   those objects where the first_name field includes that string.
 //
 
-const filterByName = (str) => {
-    let result = [];
-    for (let obj of data) {
-        if (obj.first_name == str) {
-        result.push(obj);
-    }
-}
-return result;
-};
-console.log(filterByName("Fairfax"));
+// const filterByName = (str) => {
+//   let result = [];
+//   for (let obj of data) {
+//       if (obj.first_name === str) {
+//       result.push(obj);
+//   }
+//   }
+//   return result;
+
+//   // alternate way using filter() method
+//   // return data.filter((obj)=>{return obj.first_name === str})
+// };
+// console.log(filterByName("Fairfax"));
+
+// Output:
+// [
+//   {
+//     id: 6,
+//     first_name: 'Fairfax',
+//     email: 'fcrichton5@merriam-webster.com',
+//     date_of_birth: '2009/12/23'
+//   }
+// ]
 
 // ○ Use Array.map to return an array of all the email fields.
 
-const getEmails = ()=>{
-    let emails = [];
-    data.map((obj)=>{
-        emails.push(obj.email);
-    })
-    return emails;
-}
-console.log(getEmails());
+// const getEmails = ()=>{
+//     let emails = [];
+//     data.map((obj)=>{
+//         emails.push(obj.email);
+//     })
+//     return emails;
+// }
 
+// Output:
+// [
+//   'ncrozier0@squarespace.com',
+//   'rmcgrady1@cpanel.net',
+//   'dkilshall2@elpais.com',
+//   'abraiden3@canalblog.com',
+//   'vheap4@clickbank.net',
+//   'fcrichton5@merriam-webster.com',
+//   'kvasyukhnov6@devhub.com',
+//   'scorck7@sitemeter.com',
+//   'vferandez8@e-recht24.de',
+//   'tpetyt9@upenn.edu'
+// ]
 
-// ○ Use Array.sort to return the array sorted in descending order by date_of_birth. 
-data.sort((obj1, obj2)=>{return obj2.date_of_birth.localeCompare(obj1.date_of_birth)});
-console.log(data);
+// map() with normal function declaration syntax
+// const getEmails = ()=>{
+//   let emails = [];
+//   data.map(function (obj){
+//     return emails.push(obj.email);
+//   })
+//   return emails;
+// }
 
-// ○ Write a function getById that accepts a number as a parameter and returns the object where the id is equal to that number.
+// // ○ Use Array.sort to return the array sorted in descending order by date_of_birth.
+// data.sort((obj1, obj2)=>{return obj2.date_of_birth.localeCompare(obj1.date_of_birth)});
+// console.log(data);
+
+// // ○ Write a function getById that accepts a number as a parameter and returns the object where the id is equal to that number.
 const getById = (num)=> {
     data.map((obj)=>{
         if (obj.id === num){
@@ -101,6 +135,18 @@ const getById = (num)=> {
             return;
         }
     })
+    
+    // using filter method
+    // return data.filter((obj)=>{return obj.id === num});
 }
 
-getById(3);
+// using filter method
+console.log(getById(3));
+
+// Output:
+// {
+//   id: 3,
+//   first_name: 'Demetris',
+//   email: 'dkilshall2@elpais.com',
+//   date_of_birth: '2018/12/31'
+// }

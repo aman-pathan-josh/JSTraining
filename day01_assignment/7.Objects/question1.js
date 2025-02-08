@@ -15,10 +15,9 @@ const obj1 = {...obj} // shallow copy
 const obj2 = {...obj,
     address:{
         ...obj.address,
-        details:[...obj.address.details]
+        details:[5,...obj.address.details.slice(1,obj.address.details.length+1)]
     }
 } // deep copy
 
-obj2.address.details[0] = 5;
 
 console.log(obj2);
