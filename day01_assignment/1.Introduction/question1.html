@@ -1,0 +1,31 @@
+<!-- 
+Question 1 
+
+Create a simple HTML file in notepad (do not use VSCode). To this, add some javascri by: 
+a. Writing javascript between script tags 
+b. Writing javascript in a file and passing that as a src in the script
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>question1</title>
+</head>
+<body>
+    <h2>Click this button to see welcome message</h2>
+    <button id="btn1">Click Me!</button>
+    <h2>Click this button to enter age</h2>
+    <button id="btn2">Enter Age</button>
+    <p>Your Age: <span id="age_span"></span></p> 
+    <script>
+        function getMessage(){
+            btn1 = document.getElementById('btn1')
+            btn1.addEventListener("click",()=>{
+                alert('Hello User, Welcome!')
+            })
+        }
+        getMessage();
+    </script>
+</body>
+<script src="./script.js"></script>
+</html>
