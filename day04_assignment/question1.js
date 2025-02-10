@@ -1,3 +1,6 @@
+// Question :Create a memoised function that returns the cached value when the same arguments
+// are passed.
+
 const memoizeSquare = ((square)=>{
     let cache = new Map();
     
