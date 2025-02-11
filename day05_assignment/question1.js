@@ -2,6 +2,22 @@
 // for strings.
 // Expose an isValid method that returns true or false based on the argument passed
 
+const displayErrors = (errors_array)=>{
+    if(errors_array?.length !== 0){
+        console.log("Schema is not Valid!");
+        console.log("Errors:");
+        
+        errors_array.forEach((error)=>{
+            console.log("--",error);
+        })
+    }
+    else{
+        console.log("Schema is valid");
+    }
+    
+    
+}
+
 class Validation { 
     static isValid(schema,userSchema){
         const errors = []
@@ -45,21 +61,23 @@ const schema = {
     }
 }
 
-const validateSchema = Validation.isValid(schema,{
+const validateSchema1 = Validation.isValid(schema,{
     name:'A',
     age:20,
     address:'Akurdi, pune'
 });
+const validateSchema2 = Validation.isValid(schema,{
+    name:'',
+    age:11,
+    address:''
+});
 
-if(validateSchema?.length !== 0){
-    console.log("Schema is not Valid!");
-    console.log("Errors:");
-    
-    validateSchema.forEach((error)=>{
-        console.log("--",error);
-    })
-}
-else{
-    console.log("Schema is valid");
-}
+displayErrors(validateSchema1);
+// Output: Schema is valid
 
+displayErrors(validateSchema2);
+// Schema is not Valid!
+// Errors:
+// -- Name should not be empty
+// -- age should be greater than 18
+// -- Address should not be empty
