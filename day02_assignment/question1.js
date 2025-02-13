@@ -2,16 +2,22 @@
 // sent as an argument
 // Example:
 
-const sleep_for_a_while = (t) =>{
-    setTimeout(() => {
-        console.log("Completed");
-    }, t);
+const sleep_for_a_while = async (func,t) =>{
+    return new Promise((res,rej)=>{
+        setTimeout(() => {
+            func();
+            res();
+        }, t);
+    });
 } 
 
 const func = async () => {
-console.log("Printing before");
-sleep_for_a_while(3000);
-console.log("Printing after");
+    console.log("Printing from func");
 }
 
-func();
+const foo = async () =>{
+    console.log("Printing before");
+    await sleep_for_a_while(func,5000);
+    console.log("Printing after");
+}
+foo();
